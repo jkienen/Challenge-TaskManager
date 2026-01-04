@@ -5,24 +5,24 @@
 
 ---
 
-## Raciocínio Técnico (Resumo)
+## ⚙️ Raciocínio Técnico (Resumo)
 
-- **Next.js** utilizado em Frontend, permite fácil integração com o backend e possibilita renderizar páginas no servidor antes de enviar para o usuário (SSR/SSG), garantindo melhor performance e SEO. React puro não faz isso nativamente, sendo apenas client-side.
-- **SQLite** utilizado para armazenar dados, suficiente para o challenge, evitando complexidade.
-- **Docker Compose** utilizado para deploy dos ambientes, configurado para garantir isolamento entre Backend e Frontend.
-- **Testes automatizados** utilizado para testes antes de integrar com frontend, com pytest/TestClient asseguram funcionamento correto dos endpoints.
+- `**Next.js**` utilizado em Frontend, permite fácil integração com o backend e possibilita renderizar páginas no servidor antes de enviar para o usuário (SSR/SSG), garantindo melhor performance e SEO. React puro não faz isso nativamente, sendo apenas client-side.  
+- `**SQLite**` utilizado para armazenar dados, suficiente para o challenge, evitando complexidade.  
+- `**Docker Compose**` utilizado para deploy dos ambientes, configurado para garantir isolamento entre Backend e Frontend.  
+- `**Testes automatizados**` utilizado para testes antes de integrar com frontend, com pytest/TestClient asseguram funcionamento correto dos endpoints.  
 
 ---
 
 ## ⚙️ Estrutura dos Endpoints Backend
 
-**`/Datas`**      -> Contém a base de dados SQLite.
-**`/Endpoints`**  -> Contém as rotas da API: GET /tasks, POST /tasks, PUT /tasks/{id}, DELETE /tasks/{id}
-**`/Models`**     -> Define os modelos de dados usados no corpo das requisições e nos retornos, e contém os campos da base de dados utilizados.
-**`/Services`**   -> Contém a lógica das tarefas que será utilizada pelas rotas dos endpoints.
-**`/tests`**      -> Contém os testes automatizados do backend.
-**`config.py`**   -> Configurações gerais do backend.
-**`main.py`**     -> Valida se o banco existe e sobe o backend.
+**`/Datas`**      -> Contém a base de dados SQLite.  
+**`/Endpoints`**  -> Contém as rotas da API: GET /tasks, POST /tasks, PUT /tasks/{id}, DELETE /tasks/{id}  
+**`/Models`**     -> Define os modelos de dados usados no corpo das requisições e nos retornos, e contém os campos da base de dados utilizados.  
+**`/Services`**   -> Contém a lógica das tarefas que será utilizada pelas rotas dos endpoints.  
+**`/tests`**      -> Contém os testes automatizados do backend.  
+**`config.py`**   -> Configurações gerais do backend.  
+**`main.py`**     -> Valida se o banco existe e sobe o backend.  
 
 ---
 
