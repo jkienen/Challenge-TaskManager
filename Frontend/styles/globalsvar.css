@@ -1,0 +1,16 @@
+:root{
+    --atmosBack: rgb(255, 255, 255);
+    --atmosFront: rgb(0, 0, 0);
+    --atmosFrontop: rgb(255, 255, 255, 0.1);
+    --atmosClean: rgb(255, 255, 255);
+    --atmosText: rgb(255, 255, 255);
+
+    --back: rgb(255, 255, 255);
+    --front: rgba(69, 95, 150, 0.9);
+    --fronter: rgba(69, 120, 150, 0.1);
+    --frontop: rgba(69, 111, 150, 0.1);
+    --clean: rgb(0, 0, 0);
+    --a-text: rgb(25, 54, 77);
+    --b-text: rgba(69, 120, 150, 0.6);
+}
+
