@@ -7,7 +7,7 @@
 
 ## ⚙️ Raciocínio Técnico (Resumo)
 
-- **`Next.js`** utilizado em Frontend, permite fácil integração com o backend e possibilita renderizar páginas no servidor antes de enviar para o usuário (SSR/SSG), garantindo melhor performance e SEO. React puro não faz isso nativamente, sendo apenas client-side.  
+- **`Next.js`** utilizado em Frontend, permite fácil integração com o backend e possibilita renderizar páginas no servidor antes de enviar para o usuário (SSR/SSG), garantindo melhor performance e SEO.
 - **`SQLite`** utilizado para armazenar dados, suficiente para o challenge, evitando complexidade.  
 - **`Docker Compose`** utilizado para deploy dos ambientes, configurado para garantir isolamento entre Backend e Frontend.  
 - **`Testes automatizados`** utilizado para testes antes de integrar com frontend, com pytest/TestClient asseguram funcionamento correto dos endpoints.  
