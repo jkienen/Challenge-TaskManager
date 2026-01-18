@@ -1,88 +1,89 @@
 / --------------------------------------------------------------------------------------------------------------------- /
 
-- Projeto: Challenge-TaskManager
-- Data de criação: 04/01/2026
+- Project: Challenge-TaskManager
+- Creation Date: 01/04/2026
 
 ---
 
-## ⚙️ Raciocínio Técnico (Resumo)
+## ⚙️ Technical Reasoning (Summary)
 
-- **`Next.js`** utilizado em Frontend, permite fácil integração com o backend e possibilita renderizar páginas no servidor antes de enviar para o usuário (SSR/SSG), garantindo melhor performance e SEO.
-- **`SQLite`** utilizado para armazenar dados, suficiente para o challenge, evitando complexidade.  
-- **`Docker Compose`** utilizado para deploy dos ambientes, configurado para garantir isolamento entre Backend e Frontend.  
-- **`Testes automatizados`** utilizado para testes antes de integrar com frontend, com pytest/TestClient asseguram funcionamento correto dos endpoints.  
-
----
-
-## ⚙️ Estrutura dos Endpoints Backend
-
-**`/Datas`**      -> Contém a base de dados SQLite.  
-**`/Endpoints`**  -> Contém as rotas da API: GET /tasks, POST /tasks, PUT /tasks/{id}, DELETE /tasks/{id}  
-**`/Models`**     -> Define os modelos de dados usados no corpo das requisições e nos retornos, e contém os campos da base de dados utilizados.  
-**`/Services`**   -> Contém a lógica das tarefas que será utilizada pelas rotas dos endpoints.  
-**`/tests`**      -> Contém os testes automatizados do backend.  
-**`config.py`**   -> Configurações gerais do backend.  
-**`main.py`**     -> Valida se o banco existe e sobe o backend.  
+- **`Next.js`** used in the frontend allows easy integration with the backend and enables server-side rendering (SSR/SSG), ensuring better performance and SEO.
+- **`FastAPI`** chosen for the backend due to its high performance, easy integration with Python tools, automatic API documentation, and support for asynchronous operations, making it ideal for modern web APIs.  
+- **`SQLite`** used to store data, sufficient for the challenge, avoiding unnecessary complexity.  
+- **`Docker Compose`** used for deploying the environments, configured to ensure isolation between backend and frontend.  
+- **`Automated tests`** used to validate functionality before frontend integration, with pytest/TestClient ensuring correct endpoint behavior.  
 
 ---
 
-## ⚙️ Estrutura dos arquivos Docker
+## ⚙️ Backend Endpoints Structure
 
-Abaixo estão os principais arquivos que compõem o ambiente Docker do Backend e Frontend:
+**`/Datas`**      -> Contains the SQLite database.  
+**`/Endpoints`**  -> Contains the API routes: GET /tasks, POST /tasks, PUT /tasks/{id}, DELETE /tasks/{id}  
+**`/Models`**     -> Defines the data models used in request bodies and responses, and contains the database fields.  
+**`/Services`**   -> Contains the task logic used by the API routes.  
+**`/tests`**      -> Contains automated backend tests.  
+**`config.py`**   -> General backend configuration.  
+**`main.py`**     -> Validates if the database exists and starts the backend server.  
+
+---
+
+## ⚙️ Docker File Structure
+
+Below are the main files that compose the Docker environment for the backend and frontend:
 
 - 📄 **`docker-compose.yml`**  
-  Arquivo principal que define:
-  - Os serviços do Backend (FastAPI) e Frontend (Next.js)
-  - As imagens Docker utilizadas para cada serviço
-  - As variáveis de ambiente de cada container
-  - As portas expostas para acesso externo
-  - A rede interna para comunicação entre os serviços
+  Main file that defines:
+  - Backend (FastAPI) and Frontend (Next.js) services  
+  - Docker images used for each service  
+  - Environment variables for each container  
+  - Ports exposed for external access  
+  - Internal network for service communication  
 
 - 🐳 **`Dockerfile`**  
-  Arquivos responsáveis por definir a imagem de cada aplicação:
+  Files responsible for defining each application's Docker image:
   
   Backend:
-    - Utiliza uma imagem base do Python
-    - Instalação automática das dependências via requirements.txt
-    - Execução do servidor FastAPI via Uvicorn
-  
+    - Uses a Python base image  
+    - Automatically installs dependencies via requirements.txt  
+    - Runs FastAPI server via Uvicorn  
+
   Frontend:
-    - Utiliza uma imagem base do Node.js
-    - Instalação das dependências via package.json
-    - Build e execução da aplicação Next.js
+    - Uses a Node.js base image  
+    - Installs dependencies via package.json  
+    - Builds and runs the Next.js application  
 
 ---
 
-## ⚙️ Comandos com Docker Compose
+## ⚙️ Docker Compose Commands
 
-**`Instruções de execução (Produção)`**
+**`Execution Instructions (Production)`**
 
 - `docker compose up --build -d`  
-  Inicia o container com base no Dockerfile em (background).
+  Starts the container based on the Dockerfile (in background).
 
 - `docker compose restart`  
-  Reinicia o container sem apagar os dados.
+  Restarts the container without deleting data.
 
 - `docker compose stop`  
-  Para o container sem apagar os dados.
+  Stops the container without deleting data.
 
 - `docker compose down`  
-  Remove o container.
+  Removes the container.
 
-**`Instruções de execução (Testes do Backend)`**
+**`Execution Instructions (Backend Tests)`**
 
-- `docker compose run --rm backend pytest -v`
-  Sobe um container isolado para testes automatizados e remove o container ao término.
+- `docker compose run --rm backend pytest -v`  
+  Launches an isolated container for automated tests and removes it after completion.
 
-**`Instruções de execução (Investigação e Debug)`**
+**`Execution Instructions (Investigation and Debug)`**
 
-- `docker compose ps`
-   Validar containers ativos.
+- `docker compose ps`  
+  Validate active containers.
 
-- `docker compose logs -f backend`
-  Validar logs do Backend.
+- `docker compose logs -f backend`  
+  Check backend logs.
 
-- `docker compose logs -f frontend`
-  Valida logs do Frontend.
+- `docker compose logs -f frontend`  
+  Check frontend logs.
 
 / --------------------------------------------------------------------------------------------------------------------- /
