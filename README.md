@@ -14,13 +14,18 @@ The architecture favors clarity over complexity: a lightweight SQLite store, a l
 
 ## Tech Stack
 
-| Layer | Choice | Why |
-|---|---|---|
-| Frontend | **Next.js** | Easy backend integration plus server-side rendering (SSR/SSG) for better performance and SEO |
-| Backend | **FastAPI** | High performance, async support, native Python tooling, and automatic API docs |
-| Database | **SQLite** | Sufficient for the challenge scope without the overhead of a full DBMS |
-| Deployment | **Docker Compose** | Reproducible environments with backend/frontend isolation |
-| Testing | **pytest + TestClient** | Validates endpoint behavior before frontend integration |
+<table width="100%">
+<thead>
+<tr><th align="left">Layer<div><img width="200" height="1" alt=""></div></th><th align="left">Choice<div><img width="250" height="1" alt=""></div></th><th align="left">Why<div><img width="750" height="1" alt=""></div></th></tr>
+</thead>
+<tbody>
+<tr><td>Frontend</td><td><strong>Next.js</strong></td><td>Easy backend integration plus server-side rendering (SSR/SSG) for better performance and SEO</td></tr>
+<tr><td>Backend</td><td><strong>FastAPI</strong></td><td>High performance, async support, native Python tooling, and automatic API docs</td></tr>
+<tr><td>Database</td><td><strong>SQLite</strong></td><td>Sufficient for the challenge scope without the overhead of a full DBMS</td></tr>
+<tr><td>Deployment</td><td><strong>Docker Compose</strong></td><td>Reproducible environments with backend/frontend isolation</td></tr>
+<tr><td>Testing</td><td><strong>pytest + TestClient</strong></td><td>Validates endpoint behavior before frontend integration</td></tr>
+</tbody>
+</table>
 
 ---
 
@@ -28,14 +33,19 @@ The architecture favors clarity over complexity: a lightweight SQLite store, a l
 
 The backend exposes a single `tasks` resource. Interactive docs are available at `http://localhost:8000/docs` once the stack is running.
 
-| Method | Route | Description |
-|---|---|---|
-| `GET` | `/tasks` | List all tasks |
-| `POST` | `/tasks` | Create a task |
-| `PUT` | `/tasks/{id}` | Update a task by id |
-| `DELETE` | `/tasks/{id}` | Delete a task by id |
+<table width="100%">
+<thead>
+<tr><th align="left">Method<div><img width="180" height="1" alt=""></div></th><th align="left">Route<div><img width="300" height="1" alt=""></div></th><th align="left">Description<div><img width="720" height="1" alt=""></div></th></tr>
+</thead>
+<tbody>
+<tr><td><code>GET</code></td><td><code>/tasks</code></td><td>List all tasks</td></tr>
+<tr><td><code>POST</code></td><td><code>/tasks</code></td><td>Create a task</td></tr>
+<tr><td><code>PUT</code></td><td><code>/tasks/{id}</code></td><td>Update a task by id</td></tr>
+<tr><td><code>DELETE</code></td><td><code>/tasks/{id}</code></td><td>Delete a task by id</td></tr>
+</tbody>
+</table>
 
-> ℹ️ A task cap of **10** is enforced on create — exceeding it returns `400 Task limit of 10 reached!`. Unknown ids on update/delete return `404 Task not found!`.
+> ℹ️ A task cap of **10** is enforced on create: exceeding it returns `400 Task limit of 10 reached!`. Unknown ids on update/delete return `404 Task not found!`.
 
 ---
 
@@ -43,7 +53,7 @@ The backend exposes a single `tasks` resource. Interactive docs are available at
 
 - **Docker** and **Docker Compose**
 
-That's it — dependencies for both services are installed inside their containers at build time.
+That's it: dependencies for both services are installed inside their containers at build time.
 
 ---
 
