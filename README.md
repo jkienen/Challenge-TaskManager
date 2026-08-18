@@ -2,6 +2,19 @@
 
 > A full-stack task manager built for a coding challenge. FastAPI + SQLite backend, Next.js frontend, fully containerized with Docker Compose and covered by automated API tests, so the whole stack comes up with a single command.
 
+<p align="center">
+  <img src="Reference/Concept.png" alt="Task Manager UI: a Create New Task form above two columns, Open Tasks and Closed Tasks, each task tagged Backend, Frontend or Geral with edit and delete actions, and closed tasks shown struck through.">
+</p>
+
+<table width="100%">
+<thead>
+<tr><th align="left">Stack<div><img width="330" height="1" alt=""></div></th><th align="left">Runs with<div><img width="330" height="1" alt=""></div></th><th align="left">Tested by<div><img width="340" height="1" alt=""></div></th></tr>
+</thead>
+<tbody>
+<tr><td>FastAPI + SQLite backend, Next.js frontend</td><td>one command, via Docker Compose</td><td>an automated pytest suite, run before frontend integration</td></tr>
+</tbody>
+</table>
+
 ---
 
 ## Overview
@@ -12,7 +25,8 @@ The architecture favors clarity over complexity: a lightweight SQLite store, a l
 
 ---
 
-## Tech Stack
+<details>
+<summary><strong>Tech Stack</strong> (click to expand)</summary>
 
 <table width="100%">
 <thead>
@@ -27,9 +41,10 @@ The architecture favors clarity over complexity: a lightweight SQLite store, a l
 </tbody>
 </table>
 
----
+</details>
 
-## API Endpoints
+<details>
+<summary><strong>API Endpoints</strong> (click to expand)</summary>
 
 The backend exposes a single `tasks` resource. Interactive docs are available at `http://localhost:8000/docs` once the stack is running.
 
@@ -47,17 +62,19 @@ The backend exposes a single `tasks` resource. Interactive docs are available at
 
 > ℹ️ A task cap of **10** is enforced on create: exceeding it returns `400 Task limit of 10 reached!`. Unknown ids on update/delete return `404 Task not found!`.
 
----
+</details>
 
-## Requirements
+<details>
+<summary><strong>Requirements</strong> (click to expand)</summary>
 
 - **Docker** and **Docker Compose**
 
 That's it: dependencies for both services are installed inside their containers at build time.
 
----
+</details>
 
-## Running
+<details>
+<summary><strong>Running</strong> (click to expand)</summary>
 
 All commands are run from the project root.
 
@@ -88,9 +105,10 @@ docker compose logs -f backend    # follow backend logs
 docker compose logs -f frontend   # follow frontend logs
 ```
 
----
+</details>
 
-## Project Structure
+<details>
+<summary><strong>Project Structure</strong> (click to expand)</summary>
 
 ```
 Challenge-TaskManager-main/
@@ -112,6 +130,8 @@ Challenge-TaskManager-main/
 │   └── Dockerfile                  # Node image, deps via package.json, builds & runs Next.js
 └── docker-compose.yml              # Defines services, images, env vars, ports, and network
 ```
+
+</details>
 
 ---
 
