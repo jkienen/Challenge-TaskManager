@@ -137,4 +137,4 @@ Challenge-TaskManager-main/
 
 ## License
 
-This project is provided as-is for reference and reuse. Adapt it freely to your environment.
+This project is released under the MIT License: use, adapt and redistribute it freely. Full terms in [LICENCE.md](LICENCE.md).
